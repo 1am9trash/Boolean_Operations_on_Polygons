@@ -13,7 +13,7 @@ There are lots of previous algorithms providing solutions in the field of polygo
 | Sutherland–Hodgman | can't handle concave polygon |
 | Weiler–Atherton | can't handle concave polygon |
 | Vatti | slower than Greiner-Hormann |
-| Greiner–Hormann | can't handle coincident edges |
+| Greiner–Hormann | can't handle coincident edges, vertices |
 
 The target for this porject is to make a robust library which can dealing with different types of input. Users may not be worried about convex or concave polygon problems. I will also try to improve the performance as well.
 
