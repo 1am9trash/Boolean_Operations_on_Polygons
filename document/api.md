@@ -64,6 +64,6 @@
 - Boolean Operation
   ```py
   and_result = bp.and_polygon()
-  or_result = bp.and_polygon()
-  diff_result = bp.and_polygon()
+  or_result = bp.or_polygon()
+  diff_result = bp.diff_polygon()
   ```
