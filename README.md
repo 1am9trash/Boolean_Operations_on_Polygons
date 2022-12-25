@@ -3,7 +3,7 @@
 ## Basic Information
 Boolean operations on polygons are a set of Boolean operations (AND, OR, NOT, XOR, ...) operating on 2d plane.
 
-![](images/bool_operations.png)
+![](document/images/bool_operations.png)
 
 ## Problem to solve
 There are lots of previous algorithms providing solutions in the field of polygons' boolean operations, such as Sutherland–Hodgman algorithm, Weiler–Atherton algorithm, Vatti algorithm, or Greiner–Hormann algorithm. Unfortunately, the problem is most of them have own limitations.
@@ -20,46 +20,37 @@ The target for this porject is to make a robust library which can dealing with d
 ## Prospective Users
 These sets of operations are widely used in computer graphics, GIS, CAD, and EDA (in integrated circuit physical design and verification software).
 
-## System Architecture
-- operation unit
-  - write in c++
-  - including most calculations
-- test unit
-  - write in python
-  - both testing the correctness and speed
-- visualization unit
-  - write in python
-  - make complex polygon operations be intuitive
-
 ## Api Description
-### C++
-- `vertex` class
-  - define vertex
-- `polygon` class
-  - define polygon by `vertex`
-  - function checking polygon properties, such convex or not
-- `bool_operator_with_polygon` functions
-  - take polygons as arguments
-  - deal with and, or, xor, not operations
-### python
-- test unit
-- visualization unit
+In this project, `and`, `or` `different` polygon operations were implemented. I provided both C++ and Python API. 
+Found more details in [API document](document/api.md).
 
-## Engineering Infrastructure
-| Category | Tools |
-| --- | --- |
-| Automatic Build System | gnu make |
-| Version Control | git, use branch to devide main(prod) and stg env |
-| Testing Framework | pytest, unittest |
-| Documentation | tbd |
+## Correctness Testing
+For checking correctness of algorithm, I made both fuzz test and manaul test. 
+Found more details in [Test document](document/test.md).
 
-## Schedule
-| Week | Date | target |
-| --- | --- | --- |
-| Planning phase | 9/19 to 11/7 | prepare proposal |
-| Week 1 | 11/7 | study algorithms and find solutions for limitations |
-| Week 2 | 11/14 | implement the chosen algorithm with simple unit test |
-| Week 3 | 11/21 | implement the utilities to visualize the result |
-| Week 4 | 11/28 | wrap api, create makefile, and start to do whole unit test |
-| Week 5 | 12/5 | solve any problem in test |
-| Week 6-7 | 12/12 to 12/19 | prepare presentation
+## Performance
+I compared the efficiency with boost library.
+Found more details in [Performance document](document/performance.md).
+
+## Visualization
+I created a script to help the result visualization. You may import the file to use.
+```sh
+# demo command
+$ cd code
+$ python3 visualization_tool/visualize.py
+```
+![](document/images/visual.png)
+
+## Makefile Command
+```sh
+$ cd code
+$ make polygon      # compiled python library
+$ make c_demo       # run c++ demo
+$ make py_demo      # run python demo with visualization
+$ make fuzz_test    # run fuzz test
+$ make speed_test   # run speed comparison with boost
+$ make clean        # clean
+```
+
+## Limit
+Cannot deal with self-made hole in one polygon yet.
