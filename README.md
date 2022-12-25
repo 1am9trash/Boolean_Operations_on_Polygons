@@ -39,6 +39,7 @@ I created a script to help the result visualization. You may import the file to 
 $ cd code
 $ python3 visualization_tool/visualize.py
 ```
+
 ![](document/images/visual.png)
 
 ## Makefile Command
