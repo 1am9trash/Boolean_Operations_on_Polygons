@@ -22,7 +22,7 @@ polygon: $(SRC_FOLDER)/bind_algorithm.cpp $(INC_FOLDER)/polygon.hpp $(SRC_FOLDER
 c_demo: $(INC_FOLDER)/polygon.hpp $(SRC_FOLDER)/polygon.cpp $(DEMO_FOLDER)/c_demo.cpp
 	$(CC) $(C_FLAGS) -I$(INC_FOLDER) $(SRC_FOLDER)/polygon.cpp $(DEMO_FOLDER)/c_demo.cpp -o c_demo.out
 	@echo "Compiled successfully. Use the following command to run c demo."
-	@echo "./c_demo.out < ../testcase/[somefile]"
+	@echo "./c_demo.out < /testcase/[somefile]"
 
 py_demo: polygon
 	cd sample_code && python3 py_demo.py
